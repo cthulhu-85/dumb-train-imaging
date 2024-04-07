@@ -158,6 +158,27 @@ tests-mypy = ["mypy (>=1.6)", "pytest-mypy-plugins"]
 tests-no-zope = ["attrs[tests-mypy]", "cloudpickle", "hypothesis", "pympler", "pytest (>=4.3.0)", "pytest-xdist[psutil]"]
 
 [[package]]
+name = "bellows"
+version = "0.38.1"
+description = "Library implementing EZSP"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "bellows-0.38.1-py3-none-any.whl", hash = "sha256:9a6d2f8c269094119d7759f90fb83dce9acf613eec5d8d29bcb2d05dfc2034b8"},
+    {file = "bellows-0.38.1.tar.gz", hash = "sha256:ca7709052347ade6d292b7f00ac3b3fec5ffcd79c24aadc0b54057d339eff32a"},
+]
+
+[package.dependencies]
+click = "*"
+click-log = ">=0.2.1"
+pure-pcapy3 = "1.0.1"
+voluptuous = "*"
+zigpy = ">=0.60.2"
+
+[package.extras]
+testing = ["pytest (>=7.1.2)", "pytest-asyncio (>=0.19.0)", "pytest-cov (>=3.0.0)", "pytest-mock (>=3.8.2)", "pytest-timeout (>=2.1.0)"]
+
+[[package]]
 name = "cffi"
 version = "1.16.0"
 description = "Foreign Function Interface for Python calling C code."
@@ -220,6 +241,80 @@ files = [
 
 [package.dependencies]
 pycparser = "*"
+
+[[package]]
+name = "click"
+version = "8.1.7"
+description = "Composable command line interface toolkit"
+optional = false
+python-versions = ">=3.7"
+files = [
+    {file = "click-8.1.7-py3-none-any.whl", hash = "sha256:ae74fb96c20a0277a1d615f1e4d73c8414f5a98db8b799a7931d1582f3390c28"},
+    {file = "click-8.1.7.tar.gz", hash = "sha256:ca9853ad459e787e2192211578cc907e7594e294c7ccc834310722b41b9ca6de"},
+]
+
+[package.dependencies]
+colorama = {version = "*", markers = "platform_system == \"Windows\""}
+
+[[package]]
+name = "click-log"
+version = "0.4.0"
+description = "Logging integration for Click"
+optional = false
+python-versions = "*"
+files = [
+    {file = "click-log-0.4.0.tar.gz", hash = "sha256:3970f8570ac54491237bcdb3d8ab5e3eef6c057df29f8c3d1151a51a9c23b975"},
+    {file = "click_log-0.4.0-py2.py3-none-any.whl", hash = "sha256:a43e394b528d52112af599f2fc9e4b7cf3c15f94e53581f74fa6867e68c91756"},
+]
+
+[package.dependencies]
+click = "*"
+
+[[package]]
+name = "colorama"
+version = "0.4.6"
+description = "Cross-platform colored terminal text."
+optional = false
+python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
+files = [
+    {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
+    {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
+]
+
+[[package]]
+name = "coloredlogs"
+version = "15.0.1"
+description = "Colored terminal output for Python's logging module"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "coloredlogs-15.0.1-py2.py3-none-any.whl", hash = "sha256:612ee75c546f53e92e70049c9dbfcc18c935a2b9a53b66085ce9ef6a6e5c0934"},
+    {file = "coloredlogs-15.0.1.tar.gz", hash = "sha256:7c991aa71a4577af2f82600d8f8f3a89f936baeaf9b50a9c197da014e5bf16b0"},
+]
+
+[package.dependencies]
+humanfriendly = ">=9.1"
+
+[package.extras]
+cron = ["capturer (>=2.4)"]
+
+[[package]]
+name = "colorzero"
+version = "2.0"
+description = "Yet another Python color library"
+optional = false
+python-versions = "*"
+files = [
+    {file = "colorzero-2.0-py2.py3-none-any.whl", hash = "sha256:0e60d743a6b8071498a56465f7719c96a5e92928f858bab1be2a0d606c9aa0f8"},
+    {file = "colorzero-2.0.tar.gz", hash = "sha256:e7d5a5c26cd0dc37b164ebefc609f388de24f8593b659191e12d85f8f9d5eb58"},
+]
+
+[package.dependencies]
+setuptools = "*"
+
+[package.extras]
+doc = ["pkginfo", "sphinx", "sphinx-rtd-theme"]
+test = ["pytest", "pytest-cov"]
 
 [[package]]
 name = "crccheck"
@@ -371,6 +466,38 @@ files = [
     {file = "frozenlist-1.4.1-py3-none-any.whl", hash = "sha256:04ced3e6a46b4cfffe20f9ae482818e34eba9b5fb0ce4056e4cc9b6e212d09b7"},
     {file = "frozenlist-1.4.1.tar.gz", hash = "sha256:c037a86e8513059a2613aaba4d817bb90b9d9b6b69aace3ce9c877e8c8ed402b"},
 ]
+
+[[package]]
+name = "gpiozero"
+version = "2.0.1"
+description = "A simple interface to GPIO devices with Raspberry Pi"
+optional = false
+python-versions = ">=3.9"
+files = [
+    {file = "gpiozero-2.0.1-py3-none-any.whl", hash = "sha256:8f621de357171d574c0b7ea0e358cb66e560818a47b0eeedf41ce1cdbd20c70b"},
+    {file = "gpiozero-2.0.1.tar.gz", hash = "sha256:d4ea1952689ec7e331f9d4ebc9adb15f1d01c2c9dcfabb72e752c9869ab7e97e"},
+]
+
+[package.dependencies]
+colorzero = "*"
+
+[package.extras]
+doc = ["sphinx (>=4.0)", "sphinx-rtd-theme (>=1.0)"]
+test = ["pytest", "pytest-cov"]
+
+[[package]]
+name = "humanfriendly"
+version = "10.0"
+description = "Human friendly output for text interfaces using Python"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
+files = [
+    {file = "humanfriendly-10.0-py2.py3-none-any.whl", hash = "sha256:1697e1a8a8f550fd43c2865cd84542fc175a61dcb779b6fee18cf6b6ccba1477"},
+    {file = "humanfriendly-10.0.tar.gz", hash = "sha256:6b0b831ce8f15f7300721aa49829fc4e83921a9a301cc7f606be6686a2288ddc"},
+]
+
+[package.dependencies]
+pyreadline3 = {version = "*", markers = "sys_platform == \"win32\" and python_version >= \"3.8\""}
 
 [[package]]
 name = "idna"
@@ -585,6 +712,19 @@ numpy = [
 ]
 
 [[package]]
+name = "pure-pcapy3"
+version = "1.0.1"
+description = "Pure Python reimplementation of pcapy. This package is API compatible and a drop-in replacement."
+optional = false
+python-versions = "*"
+files = [
+    {file = "pure-pcapy3-1.0.1.tar.gz", hash = "sha256:b99e45f16d4ad410eb5ebbc7d5d39e353d7eda7e86f0ad52e4dc5c45a7b3ea92"},
+]
+
+[package.dependencies]
+setuptools = "*"
+
+[[package]]
 name = "pycparser"
 version = "2.22"
 description = "C parser in Python"
@@ -593,6 +733,17 @@ python-versions = ">=3.8"
 files = [
     {file = "pycparser-2.22-py3-none-any.whl", hash = "sha256:c3702b6d3dd8c7abc1afa565d7e63d53a1d0bd86cdc24edd75470f4de499cfcc"},
     {file = "pycparser-2.22.tar.gz", hash = "sha256:491c8be9c040f5390f5bf44a5b07752bd07f56edf992381b05c701439eec10f6"},
+]
+
+[[package]]
+name = "pyreadline3"
+version = "3.4.1"
+description = "A python implementation of GNU readline."
+optional = false
+python-versions = "*"
+files = [
+    {file = "pyreadline3-3.4.1-py3-none-any.whl", hash = "sha256:b0efb6516fd4fb07b45949053826a62fa4cb353db5be2bbb4a7aa1fdd1e345fb"},
+    {file = "pyreadline3-3.4.1.tar.gz", hash = "sha256:6f3d1f7b8a31ba32b73917cefc1f28cc660562f39aea8646d30bd6eff21f7bae"},
 ]
 
 [[package]]
@@ -622,6 +773,17 @@ files = [
 
 [package.dependencies]
 pyserial = "*"
+
+[[package]]
+name = "pyusb"
+version = "1.2.1"
+description = "Python USB access module"
+optional = false
+python-versions = ">=3.6.0"
+files = [
+    {file = "pyusb-1.2.1-py3-none-any.whl", hash = "sha256:2b4c7cb86dbadf044dfb9d3a4ff69fd217013dbe78a792177a3feb172449ea36"},
+    {file = "pyusb-1.2.1.tar.gz", hash = "sha256:a4cc7404a203144754164b8b40994e2849fde1cfff06b08492f12fff9d9de7b9"},
+]
 
 [[package]]
 name = "referencing"
@@ -745,6 +907,37 @@ files = [
     {file = "rpds_py-0.18.0-pp39-pypy39_pp73-musllinux_1_2_x86_64.whl", hash = "sha256:4832d7d380477521a8c1644bbab6588dfedea5e30a7d967b5fb75977c45fd77f"},
     {file = "rpds_py-0.18.0.tar.gz", hash = "sha256:42821446ee7a76f5d9f71f9e33a4fb2ffd724bb3e7f93386150b61a43115788d"},
 ]
+
+[[package]]
+name = "scapy"
+version = "2.5.0"
+description = "Scapy: interactive packet manipulation tool"
+optional = false
+python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, <4"
+files = [
+    {file = "scapy-2.5.0.tar.gz", hash = "sha256:5b260c2b754fd8d409ba83ee7aee294ecdbb2c235f9f78fe90bc11cb6e5debc2"},
+]
+
+[package.extras]
+basic = ["ipython"]
+complete = ["cryptography (>=2.0)", "ipython", "matplotlib", "pyx"]
+docs = ["sphinx (>=3.0.0)", "sphinx_rtd_theme (>=0.4.3)", "tox (>=3.0.0)"]
+
+[[package]]
+name = "setuptools"
+version = "69.2.0"
+description = "Easily download, build, install, upgrade, and uninstall Python packages"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "setuptools-69.2.0-py3-none-any.whl", hash = "sha256:c21c49fb1042386df081cb5d86759792ab89efca84cf114889191cd09aacc80c"},
+    {file = "setuptools-69.2.0.tar.gz", hash = "sha256:0ff4183f8f42cd8fa3acea16c45205521a4ef28f73c6391d8a25e92893134f2e"},
+]
+
+[package.extras]
+docs = ["furo", "jaraco.packaging (>=9.3)", "jaraco.tidelift (>=1.4)", "pygments-github-lexers (==0.0.5)", "rst.linker (>=1.9)", "sphinx (<7.2.5)", "sphinx (>=3.5)", "sphinx-favicon", "sphinx-inline-tabs", "sphinx-lint", "sphinx-notfound-page (>=1,<2)", "sphinx-reredirects", "sphinxcontrib-towncrier"]
+testing = ["build[virtualenv]", "filelock (>=3.4.0)", "importlib-metadata", "ini2toml[lite] (>=0.9)", "jaraco.develop (>=7.21)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "mypy (==1.9)", "packaging (>=23.2)", "pip (>=19.1)", "pytest (>=6)", "pytest-checkdocs (>=2.4)", "pytest-cov", "pytest-enabler (>=2.2)", "pytest-home (>=0.5)", "pytest-mypy (>=0.9.1)", "pytest-perf", "pytest-ruff (>=0.2.1)", "pytest-timeout", "pytest-xdist (>=3)", "tomli", "tomli-w (>=1.0.0)", "virtualenv (>=13.0.0)", "wheel"]
+testing-integration = ["build[virtualenv] (>=1.0.3)", "filelock (>=3.4.0)", "jaraco.envs (>=2.2)", "jaraco.path (>=3.2.0)", "packaging (>=23.2)", "pytest", "pytest-enabler", "pytest-xdist", "tomli", "virtualenv (>=13.0.0)", "wheel"]
 
 [[package]]
 name = "typing-extensions"
@@ -900,7 +1093,108 @@ voluptuous = "*"
 [package.extras]
 testing = ["asynctest", "coverage[toml]", "coveralls", "freezegun", "pysqlite3-binary", "pytest", "pytest-asyncio", "pytest-cov", "pytest-timeout", "ruff (==0.0.261)", "tomli"]
 
+[[package]]
+name = "zigpy-cli"
+version = "1.0.4"
+description = "Unified command line interface for zigpy radios"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zigpy-cli-1.0.4.tar.gz", hash = "sha256:04d1d057053f5f75b55ab69f82054b26fd94ed8978b6d3030aa8cb4141981600"},
+    {file = "zigpy_cli-1.0.4-py3-none-any.whl", hash = "sha256:c212194accd3e71fc249281fb500e61adb9d936515dba3b3b5539c5fe2d78bb8"},
+]
+
+[package.dependencies]
+bellows = ">=0.35.1"
+click = "*"
+coloredlogs = "*"
+scapy = "*"
+zigpy = ">=0.55.0"
+zigpy-deconz = ">=0.21.0"
+zigpy-xbee = ">=0.18.0"
+zigpy-zigate = ">=0.11.0"
+zigpy-znp = ">=0.11.1"
+
+[package.extras]
+testing = ["pytest (>=7.1.2)", "pytest-asyncio (>=0.19.0)", "pytest-cov (>=3.0.0)", "pytest-mock (>=3.8.2)", "pytest-timeout (>=2.1.0)"]
+
+[[package]]
+name = "zigpy-deconz"
+version = "0.23.1"
+description = "A library which communicates with Deconz radios for zigpy"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zigpy-deconz-0.23.1.tar.gz", hash = "sha256:e3aeebd105e4e303616d8320a2c756a22a4f9d4816cee4a5db815fb6f9f02e28"},
+    {file = "zigpy_deconz-0.23.1-py3-none-any.whl", hash = "sha256:76bebc187ea8190a7ae87b592cf884b4b9e72abf4afeb3f6f1297874d9c2fea8"},
+]
+
+[package.dependencies]
+voluptuous = "*"
+zigpy = ">=0.60.2"
+
+[package.extras]
+testing = ["pytest (>=7.1.2)", "pytest-asyncio (>=0.19.0)", "pytest-cov (>=3.0.0)", "pytest-mock (>=3.8.2)", "pytest-timeout (>=2.1.0)"]
+
+[[package]]
+name = "zigpy-xbee"
+version = "0.20.1"
+description = "A library which communicates with XBee radios for zigpy"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zigpy-xbee-0.20.1.tar.gz", hash = "sha256:5bed87547e723b0d05955cafaf967400e93444103016b31e7957020b79715d5a"},
+    {file = "zigpy_xbee-0.20.1-py3-none-any.whl", hash = "sha256:7caeb2eb31931d66981279bfde6beb2ac58c569edadda6ed1e7278033e6a786d"},
+]
+
+[package.dependencies]
+zigpy = ">=0.60.0"
+
+[package.extras]
+testing = ["asynctest (>=0.13.0)", "pytest (>=7.1.2)", "pytest-asyncio (>=0.19.0)"]
+
+[[package]]
+name = "zigpy-zigate"
+version = "0.12.0"
+description = "A library which communicates with ZiGate radios for zigpy"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zigpy-zigate-0.12.0.tar.gz", hash = "sha256:49a373a8a7510eeb4adac4628c343bd1ef70a5b2a741b8c33d9068cd1d35e822"},
+    {file = "zigpy_zigate-0.12.0-py3-none-any.whl", hash = "sha256:29404a952b30a73116f0dd36d87d68477f02f0ca551c411c7a46838b29fc5ef5"},
+]
+
+[package.dependencies]
+gpiozero = "*"
+pyusb = ">=1.1.0"
+voluptuous = "*"
+zigpy = ">=0.60.0"
+
+[package.extras]
+testing = ["pytest (>=7.1.2)", "pytest-asyncio (>=0.19.0)", "pytest-cov (>=3.0.0)", "pytest-mock (>=3.8.2)", "pytest-timeout (>=2.1.0)"]
+
+[[package]]
+name = "zigpy-znp"
+version = "0.12.1"
+description = "A library for zigpy which communicates with TI ZNP radios"
+optional = false
+python-versions = ">=3.8"
+files = [
+    {file = "zigpy-znp-0.12.1.tar.gz", hash = "sha256:ce79e6edaabdd95278add6cdcc715d4ade3d6320614afa7f6e1522fa98a835a4"},
+    {file = "zigpy_znp-0.12.1-py3-none-any.whl", hash = "sha256:f45c46cbd5a82dd21611578b4db5dc6760d64452030015221a99862f0f06e884"},
+]
+
+[package.dependencies]
+async-timeout = "*"
+coloredlogs = "*"
+jsonschema = "*"
+voluptuous = "*"
+zigpy = ">=0.60.2"
+
+[package.extras]
+testing = ["pytest (>=7.3.1)", "pytest-asyncio (>=0.21.0)", "pytest-cov (>=4.1.0)", "pytest-mock (>=3.10.0)", "pytest-timeout (>=2.1.0)"]
+
 [metadata]
 lock-version = "2.0"
 python-versions = "^3.11"
-content-hash = "40d36432ecfcd47b4d41b4456a869a1ca62cfaa2b882dcbc63c807ba0b7cd15c"
+content-hash = "a62ddacdd0a1cd928c5ebf3464884c9a70125a7708f01a3c35181ddf42351b2d"
