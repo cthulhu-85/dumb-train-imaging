@@ -1,10 +1,17 @@
 #!python
 # import the opencv library 
 import cv2 
+import os
   
   
 # define a video capture object 
 vid = cv2.VideoCapture(1) 
+
+how_many_times_train_came = 0
+
+how_many_times_the_train_aint_came = 0
+
+has_played = False
   
 while(True): 
     # Capture the video frame 
@@ -27,6 +34,17 @@ while(True):
     if bright_pixels >= 255:
         print("the train came!!")
         train_came = True
+        how_many_times_train_came += 1
+
+    if how_many_times_train_came > 20 and train_came:
+        if how_many_times_the_train_aint_came > 2:
+            os.system("paplay mixkit-toy-train-whistle-1631.wav &")
+        how_many_times_train_came = 0
+        how_many_times_the_train_aint_came = 0
+
+    if not train_came:
+        how_many_times_train_came = 0
+        how_many_times_the_train_aint_came += 1
 
     #how_intense = 0
     #for i in range(0, frame_width):
