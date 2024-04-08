@@ -24,9 +24,9 @@ class Timer:
 
     def reset(self):
         self.start_time = None
-camera = input("wich camera?!") 
+camera = input("wich camera?![0-9]") 
 # define a video capture object 
-vid = cv2.VideoCapture(1) 
+vid = cv2.VideoCapture(int(camera)) 
 
 how_many_times_train_came = 0
 
