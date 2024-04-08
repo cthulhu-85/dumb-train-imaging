@@ -9,7 +9,7 @@ import time
 def display_gif_with_kitty(gif_path):
     try:
         # Start mplayer in a subprocess with the given GIF file
-        process = subprocess.Popen(['chafa', gif_path])
+        process = subprocess.Popen(['chafa',"-f", "symbols", "--symbols", "ascii", gif_path])
         
         # Wait for 10 seconds
         time.sleep(10)
