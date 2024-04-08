@@ -3,6 +3,23 @@
 import cv2 
 import os
 import time
+import subprocess
+import time
+
+def display_gif_with_kitty(gif_path):
+    try:
+        # Start mplayer in a subprocess with the given GIF file
+        process = subprocess.Popen(['chafa', gif_path])
+        
+        # Wait for 10 seconds
+        time.sleep(10)
+        
+        # Terminate mplayer process
+        process.terminate()
+        
+    except FileNotFoundError:
+        print("mplayer not found. Make sure mplayer is installed and added to the PATH.")
+
 
 # From chatgpt
 class Timer:
@@ -69,6 +86,7 @@ while(True):
     if how_many_times_train_came > 20 and train_came:
         if how_many_times_the_train_aint_came > 2:
             os.system("paplay mixkit-toy-train-whistle-1631.wav &")
+            display_gif_with_kitty("railway_crossing.gif")
         how_many_times_train_came = 0
         how_many_times_the_train_aint_came = 0
 
@@ -79,11 +97,11 @@ while(True):
     # Display the resulting frame 
     cv2.imshow('frame', frame) 
 
-    if train_came or not train_came_timer.is_done():
-        cv2.imshow('frame', tmp_image)
-        if not train_came_timer.is_started():
-            train_came_timer = Timer(5)
-            train_came_timer.start()
+    #if train_came or not train_came_timer.is_done():
+    #    cv2.imshow('frame', tmp_image)
+    #        train_came_timer = Timer(5)
+    #    if not train_came_timer.is_started():
+    #        train_came_timer.start()
     # the 'q' button is set as the 
     # quitting button you may use any 
     # desired button of your choice 
